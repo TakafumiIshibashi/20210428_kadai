@@ -1,0 +1,835 @@
+
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+  /* ↓追記 */
+	width: 960px;
+  margin-left: 400px;
+  background-color: rgb(255, 255, 225);
+
+}
+
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+.text_center{
+  text-align: center;
+}
+
+.title_main_1{
+    width      : 960px;
+    height     : 450px;
+position:absolute; z-index: 1;
+	display: flex;  
+}
+
+ /*=== 画像の表示エリア ================================= */
+.slide {
+  opacity: 0.5;
+  position   : relative;
+  overflow   : hidden;
+                    /* 画像のサイズに合わせて変更ください */
+  width      : 960px;
+  height     : 450px;
+  margin     : auto;      /* サンプルは中央寄せの背景：白 */
+  background : #fff;
+}
+ 
+ /*=== 画像の設定 ======================================= */
+.slide img {
+  display    : block;
+  position   : absolute;
+           /* 画像のサイズを表示エリアに合せる */
+  width      : inherit;
+  height     : inherit;
+  opacity    : 0;
+  animation  : slideAnime 25s ease infinite;
+}
+ 
+ /*=== スライドのアニメーションを段差で開始する ========= */
+.slide img:nth-of-type(1) { animation-delay: 0s }
+.slide img:nth-of-type(2) { animation-delay: 5s }
+.slide img:nth-of-type(3) { animation-delay: 10s }
+.slide img:nth-of-type(4) { animation-delay: 15s }
+.slide img:nth-of-type(5) { animation-delay: 20s }
+ 
+ /*=== スライドのアニメーション ========================= */
+@keyframes slideAnime{
+   0% { opacity: 0 }
+   10% { opacity: 1 }
+  20% { opacity: 1 }
+  30% { opacity: 0 }
+ 100% { opacity: 0 }
+}
+/* </style> */
+
+
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_navi {
+	position: relative;
+	overflow: hidden;
+	width: 360px;
+	height: 450px;
+	margin-right: -260px;
+}
+.cp_navi #cp_sidenav a {
+	font-size: 24px;
+	position: absolute;
+	left: -90px;
+	width: 110px;
+	height: 54px;
+	/* padding: 54px 61px; */
+	transition: 0.3s;
+	text-decoration: none;
+	color:black;
+	border-radius: 0 5px 5px 0;
+}
+.cp_navi #cp_sidenav a:hover {
+	left: -10px;
+}
+
+.cp_navi #about{
+	top: 20px;
+	background: url(../img/img2/cheese_1.png);
+	padding: 54px 61px;
+	background-size: cover;
+  background-position: center;
+  height: 250px;
+	width: 250px;
+    /* 横並び */
+  display: flex;
+    /* 上下中央揃え*/
+ justify-content: center;
+    /* 上下中央 */
+ align-items: center;
+    /* 縦並び */
+ flex-direction: column;
+	
+}
+.cp_navi #course {
+	top: 110px;
+	background: url(../img/img2/cheese_2.png);
+	padding: 56px 68px;
+	background-size: cover;
+  background-position: center;
+  height: 100%;
+	width: 100%;
+    /* 横並び */
+    display: flex;
+   /* 上下中央揃え*/
+    justify-content: center;
+    /* 上下中央 */
+    align-items: center;
+    /* 縦並び */
+    flex-direction: column;
+}
+.cp_navi #news {
+	top: 180px;
+	background: url(../img/img2/cheese_3.png);
+	padding: 54px 61px;
+	background-size: cover;
+    background-position: center;
+    height: 250px;
+    /* 横並び */
+    display: flex;
+   /* 上下中央揃え*/
+    justify-content: center;
+    /* 上下中央 */
+    align-items: center;
+    /* 縦並び */
+    flex-direction: column;
+}
+.cp_navi #access {
+	top: 260px;
+	background: url(../img/img2/cheese_4.png);
+	padding: 59px 66px;
+	background-size: cover;
+    background-position: center;
+    height: 250px;
+    /* 横並び */
+    display: flex;
+    /* 上下中央揃え*/
+    justify-content: center;
+    /* 上下中央 */
+    align-items: center;
+    /* 縦並び */
+    flex-direction: column;
+}
+.cp_navi #contact {
+	top: 340px;
+	background: url(../img/img2/cheese_5.png);
+	padding: 57px 75px;
+	background-size: cover;
+    background-position: center;
+    height: 250px;
+    /* 横並び */
+    display: flex;
+     /* 上下中央揃え*/
+    justify-content: center;
+    /* 上下中央 */
+    align-items: center;
+    /* 縦並び */
+    flex-direction: column;
+	
+}
+
+/* タイトル文字アニメーション */
+.text-focus-in_1 {
+	font-family: YuGothic, 游ゴシック,"Yu Gothic", "Noto Sans Japanese", sans-serif;
+  text-align:center;
+  font-size:48px;
+  font-weight: bold;
+  margin-top: 50px;
+  -webkit-animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.text-focus-in_2 {
+	font-family: YuGothic, 游ゴシック,"Yu Gothic", "Noto Sans Japanese", sans-serif;
+  text-align:center;
+  font-size:48px;
+  font-weight: bold;
+  margin-top: 50px;
+  -webkit-animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: text-focus-in 5.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.text-focus-in_3{
+	font-family: YuGothic, 游ゴシック,"Yu Gothic", "Noto Sans Japanese", sans-serif;
+  text-align:center;
+  font-size:30px;
+  font-weight: bold;
+  margin-top: 50px;
+  -webkit-animation: text-focus-in 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: text-focus-in 8.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+
+
+.banner_main{
+  /* margin-top: 450px; */
+	font-size: 18px;
+    display:  flex;	
+	padding-top: 20px;
+	padding-bottom: 15px;
+	background-color: #E7DA66;
+}
+
+
+.banner_1 img{
+	width: 60%;
+	padding-left: 50px;
+}
+
+.banner_font{
+	margin: 15px;
+	color: black;
+}
+
+.nav{
+text-align: center;
+}
+nav ul{
+margin: 8 ;
+padding: 0 ;
+}
+nav ul li{
+list-style: none;
+display: inline-block;
+width: 18%;
+min-width: 90px;
+}
+nav ul li a{
+text-decoration: none;
+color: #333;
+}
+nav ul li.current a{
+color: #F33135;
+}
+nav ul li a:hover{
+color: #E7DA66;
+}
+
+
+
+
+.ABOUT_box_main{
+  background: url(../img/img2/wood.jpeg);
+	/* padding-top: 450px; */
+	display: flex;
+	/* 上下中央揃え*/
+	justify-content: center;
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+
+.ABOUT_title{
+  margin-top: 90px;
+font-size: 24px;
+color: #ffd61a;	
+}
+
+.ABOUT_ABOUT{
+  margin-bottom: 80px;
+}
+
+.img_box_slidi{ 
+	height:  150px;
+	width: 100%;
+
+} 
+
+.about_phpto{
+	height: 100%;
+	width:  100%;
+	background:  url(../img/about-image.jpg);
+	background-size: cover;
+	animation: bgiLoop 300s linear infinite;
+}
+
+@keyframes bgiLoop {
+    0% { background-position: 0 0;}
+  100% { background-position: 10000px 0px;}
+}
+
+
+.COURSE_main{
+  background: url(../img/img2/soft-cheese.jpeg);
+	display: flex;
+	/* 上下中央揃え*/
+	justify-content: center;
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+.COURSE_title{
+  margin-top: 64px;
+	font-size: 24px;
+	color: #222222;	
+}
+
+.COURSE_text_2{
+  margin-bottom: 64px;
+}
+
+.COURSE_img_01{
+	display: flex;
+}
+.COURSE_img_box_01{
+	width:  50%;
+}
+.COURSE_img_box_01 img{
+	width: 100%;
+}
+.COURSE_text_01{
+	width:  50%;
+    display:  flex;
+    justify-content:  center;
+    align-items: center;
+    background:  whitesmoke;
+}
+.COURSE_text_01 div{
+	   width:  85%;
+     /* margin-left: 48px; */
+}
+.COURSE_text_01 div h1{
+	font-size: 24px;
+}
+
+.COURSE_img_02{
+	display: flex;
+}
+.COURSE_img_box_02{
+	width:  50%;
+}
+.COURSE_img_box_02 img{
+	width: 100%;
+}
+.COURSE_text_02{
+	width:  50%;
+    display:  flex;
+    justify-content:  center;
+    align-items: center;
+    background:  whitesmoke;
+}
+.COURSE_text_02 div{
+	   width:  85%;
+     /* margin-right: 48px; */
+}
+.COURSE_text_02 div h1{
+	font-size: 24px;
+}
+
+.COURSE_img_03{
+	display: flex;
+}
+.COURSE_img_box_03{
+	width:  50%;
+}
+.COURSE_img_box_03 img{
+	width: 100%;
+}
+.COURSE_text_03{
+	width:  50%;
+    display:  flex;
+    justify-content:  center;
+    align-items: center;
+    background:  whitesmoke;
+}
+.COURSE_text_03 div{
+	   width:  85%;
+     /* margin-left: 48px; */
+}
+.COURSE_text_03 div h1{
+	font-size: 24px;
+}
+
+
+/* NEWS */
+.NEWS_main{
+  height: 400px;
+  background-color: rgb(226, 204, 185);
+	display: flex;
+	/* 上下中央揃え*/
+	justify-content: center;
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+.NEWSE_title{
+	font-size: 24px;
+	color: #222222;	
+	}
+
+.NEWS_img_box_main{
+	font-size: 11px;
+	width: 80%;
+	display: flex;
+	border: 0px solid #777;
+	padding: 0px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.NEWS_img_box_01{
+	padding-right: 16px;
+}
+.NEWS_img_box_01 img{
+	width: 90%;
+}
+
+.NEWS_img_box_02{
+	padding-right: 16px;
+	padding-left: 16px;
+}
+.NEWS_img_box_02 img{
+	width: 90%;
+}
+
+.NEWS_img_box_03{
+	padding-left: 16px;
+}
+.NEWS_img_box_03 img{
+	width: 90%;
+}
+
+
+
+.more {
+   background-color: rgb(226, 204, 185);
+    font-size: 24px;
+    height: 120px;
+    width: 960px;
+    margin: 0px auto;
+}
+
+.more a {
+  margin-left: 420px;
+  margin-right: 420px;
+  line-height: 75px;
+  background-color: whitesmoke;
+  display: block;
+  color: rgb(110, 73, 38);
+  border-radius: 10%;
+}
+
+.more a:hover {
+  background: #444444;
+  color: whitesmoke;
+}
+
+.news-box{
+  height: 270px;
+  background-color: rgb(226, 204, 185);
+
+}
+
+
+
+.ACCESS_main{
+  width: 960px;
+  height: 746.88px;
+  position:absolute; z-index: 1;
+	/* background-color: blue; */
+	margin-top: 48px;
+	/* 背景薄くする */
+	/* opacity: 0.5; */
+}
+
+.ACCESS_title{
+	display: flex;
+	/* 上下中央揃え*/
+	justify-content: center;
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+.ACCESS_map{
+	padding-top: 64px;
+	width: 100%;
+	height: 264px;
+}
+
+.ACCESS_map img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.ACCESS_texe{
+	display: flex;
+	/* 上下中央揃え*/
+	/* justify-content: center; */
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+.ACCESS_texe_1{
+	/* width: 100%; */
+	display: flex;
+	margin-top: 40px;
+}
+
+.ACCESS_texe_1_学校名{
+	margin-left: 0px;
+	margin-right: 191px;
+}
+.ACCESS_texe_1_チーズアカデミーFUKUOKA{
+	margin-left: -40px;
+	margin-right: 68px;
+}
+
+.ACCESS_texe_2{
+	/* width: 100%; */
+	display: flex;
+	margin-top: 24px;
+}
+.ACCESS_texe_2_事務所所在地{
+	margin-left: 200px;
+	margin-right: 0px;
+}
+
+.ACCESS_texe_2_〒{
+	margin-right: 0px;
+	margin-left: 102px;
+}
+
+
+
+
+
+.ACCESS_texe_3{
+	/* width: 100%; */
+	display: flex;
+	margin-top: 24px;
+}
+.ACCESS_texe_3_TEL{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.ACCESS_texe_3_0{
+	margin-left: 70px;
+	margin-right: 268px;
+}
+
+
+
+.ACCESS_texe_4{
+	/* width: 100%; */
+	display: flex;
+	margin-top: 24px;
+}
+
+.ACCESS_texe_4_FAX{
+	margin-right: 100px;
+	margin-left: 100px;
+}
+
+.ACCESS_texe_4_9{
+	margin-left: 70px;
+	margin-right: 268px;
+}
+
+
+
+.ACCESS_texe_5{
+	/* width: 100%; */
+	display: flex;
+	margin-top: 24px;
+}
+
+.AACCESS_texe_5_MAIL{
+	margin-left: 100px;
+}
+
+.ACCESS_texe_5_dummy{
+	margin-left: 162px;
+	margin-right: 42px;
+	margin-bottom: 80px;
+}
+
+.ACCESS_img{
+  /* 背景薄くする */
+	opacity: 0.3;
+
+
+}
+
+
+.CONTACT_all{
+  /* background-color: rgb(205, 231, 205); */
+  position:absolute; z-index: 1;
+  margin-top: 30px;
+}
+
+.CONTACT_main{
+	display: flex;
+	/* 上下中央揃え*/
+	justify-content: center;
+	/* 上下中央 */
+	align-items: center;
+	/* 縦並び */
+	flex-direction: column;
+}
+
+
+.CONTACT_title_1{
+	margin-top: 12px;
+}
+
+.CONTACT_title_2{
+	margin-top: 54px;
+}
+
+.CONTACT_title_4{
+	margin-top: 32px;
+}
+
+.contact {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0px 0;
+}
+
+
+
+/* テーブル */
+.contact {
+    text-align: center;
+}
+
+.contact table {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 120px 24px;
+}
+
+.contact input {
+    border: rgb(80, 80, 80) solid 1px;
+    width: 328px;
+    height: 36px;
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+/* .check-menu input[type="checkbox"] {
+      background: #3d404e;
+      border: #7f83a2 1px solid;
+   } */
+
+.checkbox{
+  height: 216px;
+  margin-bottom: 32px;
+}
+.checkbox input {
+    height: 24px;
+    width: 24px;
+    color: #f0e6e5;
+    margin-right: 40px;
+}
+
+.check-menu {
+    margin-bottom: 24px;
+}
+
+.details textarea {
+    height: 108px;
+    width: 328px;
+    margin-bottom: 32px;
+    border: rgb(80, 80, 80) solid 1px;
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+.contact button {
+    height: 54px;
+    width: 298px;
+    background-color: #ffd61a;
+    margin: 8px 0px 100px 0px;
+
+}
+
+.contact a {
+    line-height: 54px;
+    display: block;
+    font-size: 18px;
+    color: azure;
+}
+
+.contact td {
+    vertical-align: top;
+}
+
+.contact_img{
+  /* 背景薄くする */
+opacity: 0.6;
+}
+
+
+/* 一番下 */
+.copyrights{
+  background-color: #707070;
+  color: #fff;
+  font-size: 18px;
+  /* 横並び */
+    display: flex;
+    /* 上下中央揃え*/
+    justify-content: center;
+    /* 上下中央 */
+    align-items: center;
+    /* 縦並び */
+    flex-direction: column;
+    width: 100%;
+    height: 82px;
+
+}
+
+
+/* トップボタン */
+#page_top{
+  margin-right: 332px;
+  width: 100px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 40px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -25px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
